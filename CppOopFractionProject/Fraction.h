@@ -18,6 +18,8 @@ class Fraction
 {
 	int numerator;
 	int denominator;
+
+	void Reduction();
 public:
 	Fraction() : Fraction(0, 1){}
 
@@ -52,9 +54,30 @@ public:
 		return denominator;
 	}
 
-	void Print() const
+	void Print(char end = ' ') const
 	{
-		std::cout << "[" << numerator << "/" << denominator << "]";
+		std::cout << "[" << numerator << "/" << denominator << "]" << end;
 	}
+
+	void Add(Fraction other);
+	void Add(int other);
+	void Add(double other);
+
+	void Del(Fraction other);
+	void Del(int other);
+	void Del(double other);
+
+	void Mult(Fraction other);
+
+	void Div(Fraction other);
+
+	Fraction Plus(Fraction other);
+	Fraction Minus(Fraction other);
+	Fraction Multiply(Fraction other);
+	Fraction Divide(Fraction other);
+
+	Fraction operator+(Fraction other);
+	Fraction operator+(int other);
+
 };
 
